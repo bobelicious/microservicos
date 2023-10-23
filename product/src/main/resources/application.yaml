@@ -1,0 +1,16 @@
+server:
+  port: 8100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: product-service
+springdoc:
+  api-docs:
+    path: /product-service/v3/api-docs
+management:
+  tracing:
+    sampling:
+      probability: 1.0

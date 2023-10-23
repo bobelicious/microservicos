@@ -1,0 +1,26 @@
+server:
+  port: 8400
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: address-service
+springdoc:
+  api-docs:
+    path: /address-service/v3/api-docs
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+resilience4j:
+  bulkhead:
+    instances:
+      dafault:
+        max-concurrent-calls: 10
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2
+        limit-refresh-period: 10s

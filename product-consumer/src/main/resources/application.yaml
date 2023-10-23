@@ -1,0 +1,27 @@
+server:
+  port: 8101
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: product-service-consumer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/produto_service
+    username: postgres
+    password: 123
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+# springdoc:
+#   api-docs:
+#     path: /product-consumer-service/v3/api-docs
+management:
+  tracing:
+    sampling:
+      probability: 1.0
